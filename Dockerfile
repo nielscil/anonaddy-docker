@@ -94,8 +94,8 @@ RUN apk --no-cache add -t build-dependencies \
   && addgroup anonaddy mail \
   && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer \
   && git config --global --add safe.directory /var/www/anonaddy \
-  && git init . && git remote add origin "https://github.com/anonaddy/anonaddy.git" \
-  && git fetch --depth 1 origin "v${ANONADDY_VERSION}" && git checkout -q FETCH_HEAD \
+  && git init . && git remote add origin "https://github.com/nielscil/anonaddy.git" \
+  && git fetch --depth 1 origin "feature/ProxyAuthenticationSupport" && git checkout -q FETCH_HEAD \
   && composer install --optimize-autoloader --no-dev --no-interaction --no-ansi --ignore-platform-req=php-64bit \
   && chown -R anonaddy. /var/www/anonaddy \
   && npm ci --ignore-scripts \
